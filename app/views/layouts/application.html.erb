@@ -20,8 +20,8 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to(user_path(@user.id), class:'nav-link text-light') do %>
-                    <strong><i class="fa-solid fa-house"></i><span> Home</span></strong>
+                  <%= link_to(user_path(current_user.id), class:'nav-link text-light') do %>
+                    <strong><i class="fa-solid fa-home"></i><span> Home</span></strong>
                   <% end %>
                 </li>
                 <li>
@@ -36,13 +36,13 @@
                 </li>
                 <li>
                   <%= link_to(destroy_user_session_path, method: :delete, class:'nav-link text-light') do %>
-                    <strong><i class="fa-solid fa-right-from-bracket"></i><span> Log out</span></strong>
+                    <strong><i class="fa-solid fa-sign-out-alt"></i><span> Log out</span></strong>
                   <% end %>
                 </li>
               <% else %>
                 <li>
                   <%= link_to(root_path, class:'nav-link text-light') do %>
-                    <strong><i class="fa-solid fa-house"></i><span> Home</span></strong>
+                    <strong><i class="fa-solid fa-home"></i><span> Home</span></strong>
                   <% end %>
                 </li>
                 <li>
@@ -57,7 +57,7 @@
                 </li>
                 <li>
                   <%= link_to(new_user_session_path, class:'nav-link text-light') do %>
-                    <strong><i class="fa-solid fa-right-to-bracket"></i><span> Log in</span></strong>
+                    <strong><i class="fa-solid fa-sign-in-alt"></i><span> Log in</span></strong>
                   <% end %>
                 </li>
               <% end %>
